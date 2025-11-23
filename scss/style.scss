@@ -1,48 +1,7 @@
-@charset "UTF-8";
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+@use 'base';
+@use 'layout';
 
-html {
-  height: 100vh;
-}
 
-body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-main {
-  flex-grow: 1;
-  background-color: #EEE4C6;
-}
-
-.navbar {
-  background-color: #EEE4C6;
-  border-bottom: 3px solid #2D4350;
-}
-.navbar .navbar-brand {
-  max-width: 50%;
-}
-.navbar .navbar-img {
-  max-width: 35%;
-  min-width: 75px;
-}
-.navbar .nav-link {
-  color: #2D4350;
-  font-family: "Roboto", sans-serif;
-  text-transform: uppercase;
-  font-size: 1.1rem;
-  transition: color 0.3s ease;
-}
-.navbar .nav-link:hover {
-  color: #B95F50;
-  text-decoration: underline 2px #2D4350;
-  text-underline-offset: 4.5px;
-}
 
 /* --- Footer --- */
 /*
@@ -320,6 +279,7 @@ margin-bottom: 1rem;
     padding: 4rem 0;
 }
 */
+
 /* -- Galeria -- */
 /*
 .contenedor-galeria {
@@ -336,6 +296,7 @@ margin-bottom: 1rem;
     margin-bottom: rem;
 }
 */
+
 /* -- Contacto -- */
 /*
 .titulo-contacto {
@@ -355,8 +316,12 @@ margin-bottom: 1rem;
 }
 
 */
+
 /*--- MEDIAS QUERYS ---*/
+
 /* -- DESKTOP -- */
+// Max-width: igual o menor que el ancho especificado
+
 /*
 @media (max-width: 1023px) {
     .galeria-main {
@@ -442,5 +407,3 @@ margin-bottom: 1rem;
     }
 }
     */
-
-/*# sourceMappingURL=style.css.map */
