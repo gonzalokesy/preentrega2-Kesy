@@ -1,0 +1,32 @@
+@use '../abstracts' as abs;
+
+
+.navbar {
+    background-color: abs.color(secondary);
+    border-bottom: 3px solid abs.color(primary);
+
+    .navbar-brand {
+        max-width: 50%;
+    }
+
+    .navbar-img {
+        max-width: 35%;
+        min-width: 75px;
+    }
+
+    .nav-link {
+        color: abs.color(primary);
+        font-family: abs.typography(font-text);
+        text-transform: uppercase;
+        font-size: 1.1rem;
+        transition: color 0.3s ease;
+
+        &:hover {
+            color: abs.color(alert);
+            text-decoration: underline 2px abs.color(primary);
+            text-underline-offset: 4.5px;
+        }
+    }
+
+
+}
