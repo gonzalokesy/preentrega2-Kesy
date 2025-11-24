@@ -1,68 +1,15 @@
 @use 'base';
 @use 'layout';
+@use 'pages';
+@use 'components';
 
 
-/* --- Index ---*/
-/*Cree otra section que envuelve al main en general para poder dar background color evitando los limites de seguridad del container*/
-/*
-.main-bkgcolor {
-    padding-top: 2rem;
-}
-*/
+
 /*Oculto el titulo principal pero se conserva el SEO*/
-/*.titulo-principal {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-}
-
-.subtitulos-main {
-    color: #2D4350;
-    text-align: center;
-    margin-top: 2.5rem;
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    /*text-decoration: underline 3px #2D4350;
-    text-underline-offset: 25px;
-    margin-bottom: 60px;
-}
+/*
 
 
-.imagen-principal {
-    display: block;
-    width: 100%
-}
 
-.galeria-main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
-}
-
-.galeria-main li {
-    font-size: clamp(0.5rem, 5vw, 1.5rem);
- //   background-color: #DC9E67;
-    color: #2D4350;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 8px;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-width: 0 0 4px 0;
-    border-style: solid;
-    border-color: #DC9E67;
-    transition: transform 0.5s ease, background-color 0.5s ease;
-}
 
 .galeria-main li:hover {
     transform: translateY(-5px);
