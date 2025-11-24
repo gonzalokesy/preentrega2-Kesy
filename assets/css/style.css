@@ -1,4 +1,12 @@
 @charset "UTF-8";
+.welcome-text-nosotros, .articulo-nosotros p {
+  color: #2D4350;
+  font-size: clamp(0.9rem, 3vw, 1.25rem);
+  text-align: left;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -158,6 +166,36 @@ main {
   background-color: #DC9E67;
 }
 
+.welcome-text-nosotros {
+  text-align: center;
+}
+
+.nosotros-primeraFila,
+.nosotros-segundaFila {
+  padding: 2rem 0;
+}
+
+.articulo-nosotros {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.articulo-nosotros h2 {
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.articulo-nosotros h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #DC9E67;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
 .contenedor-boton {
   display: flex;
   justify-content: center;
@@ -183,49 +221,14 @@ main {
   box-shadow: 0 8px 25px #DC9E67;
 }
 
-/*Oculto el titulo principal pero se conserva el SEO*/
-/*
-
-
-
-
-.galeria-main li:hover {
-    transform: translateY(-5px);
-    background-color: #DC9E67;
-}
-*/
-/*
-.galeria-main li::before {
-    content: '⚙️';
-    display: block;
-    //Cambio a display block porque ::before es un elemento de linea por defecto. 
-font-size: clamp(1.2rem, 5vw, 3rem);
-margin-bottom: 1rem;
+.section-title {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  color: #2D4350;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-transform: uppercase;
 }
 
-.contenedor-boton {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.contenedor-boton .boton-general {
-    text-decoration: none;
-    // border-bottom: 4px solid #2D4350;
-    //border-right: 4px solid #2D4350;
-    border-radius: 50px;
-    padding: 1rem 2.5rem;
-    text-transform: uppercase;
-    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
-    background-color: #2D4350;
-    color: #EEE4C6;
-}
-
-.contenedor-boton .boton-general:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px #DC9E67;
-}
-*/
 /* --- Servicios ---*/
 /*
 .servicios-bkgcolor,

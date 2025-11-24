@@ -5,49 +5,7 @@
 
 
 
-/*Oculto el titulo principal pero se conserva el SEO*/
-/*
 
-
-
-
-.galeria-main li:hover {
-    transform: translateY(-5px);
-    background-color: #DC9E67;
-}
-*/
-/*
-.galeria-main li::before {
-    content: '⚙️';
-    display: block;
-    //Cambio a display block porque ::before es un elemento de linea por defecto. 
-font-size: clamp(1.2rem, 5vw, 3rem);
-margin-bottom: 1rem;
-}
-
-.contenedor-boton {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
-}
-
-.contenedor-boton .boton-general {
-    text-decoration: none;
-    // border-bottom: 4px solid #2D4350;
-    //border-right: 4px solid #2D4350;
-    border-radius: 50px;
-    padding: 1rem 2.5rem;
-    text-transform: uppercase;
-    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
-    background-color: #2D4350;
-    color: #EEE4C6;
-}
-
-.contenedor-boton .boton-general:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px #DC9E67;
-}
-*/
 /* --- Servicios ---*/
 /*
 .servicios-bkgcolor,
