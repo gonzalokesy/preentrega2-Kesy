@@ -44,76 +44,63 @@ main {
   text-underline-offset: 4.5px;
 }
 
-/* --- Footer --- */
-/*
 .footer-general {
-    background-color: #EEE4C6;
-    border-top: 3px solid #2D4350;
-    border-bottom: 3px solid #2D4350;
-    padding: 1rem 0;
+  background-color: #EEE4C6;
+  border-top: 3px solid #2D4350;
+  border-bottom: 3px solid #2D4350;
+  padding: 1rem 0;
 }
-
 
 .img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+.img-container .logo-footer {
+  width: clamp(120px, 15vw, 50%);
+  height: auto;
+  padding: 5px;
 }
 
-.logo-footer {
-    width: clamp(120px, 15vw, 50%);
-    height: auto;
-    padding: 5px;
+.footer-contacto,
+.footer-redes {
+  margin: 0;
 }
-
-.footer-contacto {
-    margin: 0;
-}
-
 .footer-contacto h3,
 .footer-redes h3 {
-    font-size: clamp(0.7rem, 5vw, 1rem);
-    color: #2D4350;
-    text-align: center;
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.7rem, 5vw, 1rem);
+  color: #2D4350;
+  text-align: center;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
 }
 
-.footer-contacto .footer-contacto-lista {
-    padding: 0;
-    list-style: none;
-    margin: 0;
+.footer-contacto-lista,
+.footer-redes-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-contacto-lista li,
+.footer-redes-lista li {
+  padding: 5px;
+  text-align: center;
+  font-size: clamp(0.8rem, 5vw, 1rem);
+  color: #2D4350;
 }
 
-.footer-contacto .footer-contacto-lista li {
-    font-size: clamp(1rem, 5vw, 0.8rem);
-    text-align: center;
-    color: #2D4350;
-    padding: 5px;
+.footer-link {
+  font-size: clamp(0.8rem, 5vw, 1rem);
+  text-align: center;
+  color: #2D4350;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #B95F50;
 }
 
-.footer-redes .footer-redes-lista {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer-redes .footer-redes-lista li {
-    padding: 5px;
-    text-align: center;
-}
-
-.footer-redes .footer-redes-lista li a {
-    font-size: clamp(00.8rem, 5vw, 1rem);
-    text-align: center;
-    color: #2D4350;
-    text-decoration: none;
-}
-*/
 /* --- Index ---*/
 /*Cree otra section que envuelve al main en general para poder dar background color evitando los limites de seguridad del container*/
 /*
