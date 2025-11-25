@@ -1,5 +1,5 @@
 @charset "UTF-8";
-.servicio-item .texto-servicio p, .welcome-text-nosotros, .articulo-nosotros p {
+.lista-contactos article p, .servicio-item .texto-servicio p, .welcome-text-nosotros, .articulo-nosotros p {
   color: #2D4350;
   font-size: clamp(0.9rem, 3vw, 1.25rem);
   text-align: left;
@@ -280,6 +280,57 @@ main {
   }
 }
 
+.lista-contactos {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.lista-contactos article {
+  margin-bottom: 2rem;
+}
+.lista-contactos article h2 {
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.lista-contactos article h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #DC9E67;
+  margin: 0.5rem auto 0;
+}
+.form-label {
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 1px;
+}
+
+.form-control {
+  border: 2px solid #2D4350;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2D4350;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #DC9E67;
+  background-color: #fff;
+}
+
+.form-text {
+  color: #2D4350;
+  margin-bottom: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+}
+
 .contenedor-boton {
   display: flex;
   justify-content: center;
@@ -313,78 +364,6 @@ main {
   text-transform: uppercase;
 }
 
-/* --- Servicios ---*/
-/*
-.servicios-bkgcolor,
-.nosotros-bkgcolor,
-.galeria-bkgcolor {
-    background-color: #EEE4C6;
-    padding-top: 2rem;
-}
-
-.titulo-servicio,
-.titulo-nosotros,
-.titulo-galeria,
-.titulo-contacto {
-    color: #2D4350;
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    //text-decoration: underline #2D4350;
-    text-underline-offset: 1rem;
-}
-
-.servicio-item {
-    width: 100%;
-}
-
-.texto-servicio h2 {
-    color: #2D4350;
-    font-size: clamp(1rem, 3vw, 2rem);
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-    //text-decoration: underline 2px solid #DC9E67;
-}
-
-.texto-servicio p {
-    color: #2D4350;
-    font-size: clamp(1rem, 3vw, 1.15rem);
-    text-align: center;
-}
-
-.servicio-item .row {
-    display: flex;
-    align-items: center;
-}
-
-.servicio-item {
-    margin-bottom: 2rem;
-}
-
-.servicio-item:nth-of-type(odd) .row {
-    flex-direction: row;
-}
-
-.servicio-item:nth-of-type(even) .row {
-    flex-direction: row-reverse;
-}
-
-.servicio-item:nth-of-type(odd) .img-servicio img {
-    display: block;
-    margin: 0 0 0 auto;
-}
-
-
-.servicio-item:nth-of-type(odd) .texto-servicio {
-    padding-right: 3rem;
-}
-
-.servicio-item:nth-of-type(even) .texto-servicio {
-    padding-left: 3rem;
-}
-*/
 /* -- Galeria -- */
 /*
 .contenedor-galeria {
@@ -420,92 +399,5 @@ main {
 }
 
 */
-/*--- MEDIAS QUERYS ---*/
-/* -- DESKTOP -- */
-/*
-@media (max-width: 1023px) {
-    .galeria-main {
-        grid-template-columns: repeat(2, 1fr)
-    }
-*/
-/*Footer*/
-/*
-    .img-container {
-        margin-bottom: 1.5rem;
-    }
-
-    .contacto-container {
-        margin-bottom: 1.5rem;
-    }
-*/
-/* -- Servicios -- */
-/*
-    .titulo-servicio {
-        text-decoration: none;
-    }
-
-    .servicio-item .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .img-servicio img {
-        display: block;
-        margin: 0 auto 0 auto;
-    }
-
-    .servicio-item:nth-of-type(odd) .img-servicio img {
-        margin: 0 auto 0 auto;
-    }
-
-    .servicio-item:nth-of-type(odd) .texto-servicio {
-        padding: 0;
-    }
-
-    .servicio-item:nth-of-type(even) .texto-servicio {
-        padding: 0;
-    }
-*/
-/* -- Servicios -- */
-/*
-    .nosotros-primeraFila,
-    .nosotros-segundaFila {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .nosotros-primeraFila {
-        padding: 2rem 0;
-    }
-
-    .nosotros-primeraFila div {
-        padding: 2rem 0;
-    }
-
-    .nosotros-primeraFila:nth-last-child {
-        padding-bottom: 0;
-    }
-
-    .nosotros-segundaFila div {
-        padding-bottom: 2rem;
-    }
-
-}
-*/
-/* -- MOBILE -- */
-/*Max-width: igual o menor que el ancho especificado*/
-/*
-@media (max-width: 600px) {
-
-    // -- Index -- 
-    .galeria-main {
-        grid-template-columns: repeat(1, 1fr)
-    }
-
-    .subtitulos-main {
-        text-decoration: none;
-    }
-}
-    */
 
 /*# sourceMappingURL=style.css.map */

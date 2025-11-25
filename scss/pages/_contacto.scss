@@ -1,0 +1,64 @@
+@use '../abstracts' as abs;
+
+// Información de las 3 columnas de contacto
+.lista-contactos {
+    text-align: center;
+    margin-bottom: 4rem;
+
+    article {
+        margin-bottom: 2rem;
+
+        h2 {
+            color: abs.color(primary);
+            font-family: abs.typography(font-title);
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+
+            &::after {
+                content: '';
+                display: block;
+                width: 40px;
+                height: 2px;
+                background-color: abs.color(accent);
+                margin: 0.5rem auto 0;
+            }
+        }
+
+        p {
+            @extend %normal-text;
+        }
+    }
+}
+
+// Estilos para el formulario
+
+.form-label {
+    color: abs.color(primary);
+    font-family: abs.typography(font-title);
+    text-transform: uppercase;
+    font-size: clamp(0.9rem, 2vw, 1.1rem);
+    letter-spacing: 1px;
+}
+
+.form-control {
+    border: 2px solid abs.color(primary);
+    background-color: rgba(255, 255, 255, 0.8);
+    color: abs.color(primary);
+    border-radius: 8px;
+    padding: 0.8rem;
+
+    &:focus {
+        box-shadow: none;
+        outline: none;
+        border-color: abs.color(accent);
+        background-color: #fff;
+    }
+}
+
+.form-text {
+    color: abs.color(primary);
+    margin-bottom: 2rem;
+    font-family: abs.typography(font-text);
+    font-size: 0.9rem;
+}
