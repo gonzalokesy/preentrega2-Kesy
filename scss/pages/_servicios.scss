@@ -1,1 +1,98 @@
 @use '../abstracts' as abs;
+
+.servicio-item {
+    // Definición del estilo cascada
+    margin-bottom: 4rem;
+
+    .row {
+        align-items: center;
+    }
+
+    // Filas pares
+    &:nth-of-type(even) {
+        .row {
+            flex-direction: row-reverse;
+        }
+
+        .texto-servicio {
+            padding-left: 3rem;
+            text-align: left;
+
+            h2,
+            p {
+                text-align: left;
+            }
+        }
+
+    }
+
+    // Filas Impares
+    &:nth-of-type(odd) {
+        .texto-servicio {
+            padding-right: 3rem;
+            text-align: right;
+
+            h2,
+            p {
+                text-align: left;
+            }
+        }
+
+        .img-servicio {
+            display: flex;
+            justify-content: flex-end;
+        }
+    }
+
+    // Estilos de los subtitulos y textos GENERALES
+    .texto-servicio {
+        h2 {
+            color: abs.color(primary);
+            font-family: abs.typography(font-title);
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            @extend %normal-text;
+        }
+    }
+
+    .img-servicio img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    // Aplco mediaquey para deshacer el efecto zigzag y encolumanr todo 
+    @include abs.media('tablet') {
+        margin-bottom: 3rem;
+
+        .row {
+            flex-direction: column;
+        }
+
+        &:nth-of-type(even) .row {
+            flex-direction: column;
+        }
+
+        &:nth-of-type(even) .texto-servicio,
+        &:nth-of-type(odd) .texto-servicio {
+            padding: 0;
+            text-align: center;
+            margin-bottom: 2rem;
+
+            h2,
+            p {
+                text-align: center;
+            }
+        }
+
+        .img-servicio img {
+            margin: 0 auto;
+            max-width: 100%;
+        }
+    }
+
+}

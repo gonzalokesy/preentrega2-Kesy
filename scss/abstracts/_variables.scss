@@ -13,3 +13,8 @@ $fonts: (
     font-title: ('Oswald', sans-serif),
     font-text: ('Roboto', sans-serif)
 );
+
+$breakpoints: (
+    "mobile": 600px,
+    "tablet": 1023px,
+);

@@ -34,3 +34,17 @@
         box-shadow: 0 8px 25px map.get(vars.$palette, accent);
     }
 }
+
+//Mixin para MediaQuery
+@mixin media($breakpoint) {
+    // Aquí se almacena el valor de la mediaquery (si existe definida en las variables)
+    $selected-query: map.get(vars.$breakpoints, $breakpoint);
+
+    @if $selected-query {
+
+        // Si hay match de mediaquery se define un max-width
+        @media (max-width: $selected-query) {
+            @content
+        }
+    }
+}

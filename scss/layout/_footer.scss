@@ -59,3 +59,10 @@
     }
 
 }
+
+.img-container,
+.contacto-container {
+    @include abs.media('tablet') {
+        margin-bottom: 1.5rem;
+    }
+}
