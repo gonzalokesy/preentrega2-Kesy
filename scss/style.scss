@@ -1,3 +1,6 @@
+// Usar forward en cada carpeta nos permite unificar los llamados a cada partial dentro de un único archivo _index
+// Scss busca priemro la carpeta _index cuand ose consulta una carpeta, esto permite llamar a a la carpeta sin tener que llamar a cada partial.
+
 @use 'base';
 @use 'layout';
 @use 'pages';
