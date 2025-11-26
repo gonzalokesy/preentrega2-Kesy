@@ -1,458 +1,393 @@
-/*Paleta de colores: 
-#2D4350 - Gris azulado
-#EEE4C6 - Bronce
-#DC9E67 - Amarillo
-#B95F50 - Rojo
-*/
-
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@charset "UTF-8";
+.lista-contactos article p, .servicio-item .texto-servicio p, .welcome-text-nosotros, .articulo-nosotros p {
+  color: #2D4350;
+  font-size: clamp(0.9rem, 3vw, 1.25rem);
+  text-align: left;
+  line-height: 1.6;
+  font-family: "Roboto", sans-serif;
 }
 
-/* - Encontré una propiedad CLAMP() que se puede suar para textos o para anchos, ahorra tiempo con cuestiones repsosive y es muy estético.
-se irán aplicando cuando sea necesario.*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 html {
-    height: 100%;
+  height: 100vh;
 }
 
 body {
-    min-height: 100%;
-    display: flex;
-    flex-direction: column;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-    flex-grow: 1;
-    background-color: #EEE4C6;
+  flex-grow: 1;
+  background-color: #EEE4C6;
 }
 
-
-/* --- NavBar --- */
 .navbar {
-    background-color: #EEE4C6;
-    border-bottom: 3px solid #2D4350;
+  background-color: #EEE4C6;
+  border-bottom: 3px solid #2D4350;
 }
-
-.navbar img {
-    max-width: 35%;
-    min-width: 75px;
-}
-
 .navbar .navbar-brand {
-    max-width: 50%;
+  max-width: 50%;
 }
-
-.navbar .navbar-nav .nav-link {
-    color: #2D4350;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
+.navbar .navbar-img {
+  max-width: 35%;
+  min-width: 75px;
 }
-
-.navbar .navbar-nav .nav-link:hover {
-    color: #B95F50;
-    text-decoration: underline 2px #2D4350;
-    text-underline-offset: 4.5px;
+.navbar .nav-link {
+  color: #2D4350;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
 }
-
-/*Luego de investigar esta es la forma que encontré de tratar al ícono hamgurguesa de Bootstrap ya que no es un texto, es formato SVG.
-La propiedad "filter" permite manipularlo sin cambiar el estilo original. */
-.navbar-toggler-icon {
-    filter: invert(1) grayscale(100%) brightness(2);
+.navbar .nav-link:hover {
+  color: #B95F50;
+  text-decoration: underline 2px #2D4350;
+  text-underline-offset: 4.5px;
 }
-
-/* --- Footer --- */
 
 .footer-general {
-    background-color: #EEE4C6;
-    border-top: 3px solid #2D4350;
-    border-bottom: 3px solid #2D4350;
-    padding: 1rem 0;
+  background-color: #EEE4C6;
+  border-top: 3px solid #2D4350;
+  border-bottom: 3px solid #2D4350;
+  padding: 1rem 0;
 }
-
 
 .img-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+}
+.img-container .logo-footer {
+  width: clamp(120px, 15vw, 50%);
+  height: auto;
+  padding: 5px;
 }
 
-.logo-footer {
-    width: clamp(120px, 15vw, 50%);
-    height: auto;
-    padding: 5px;
+.footer-contacto,
+.footer-redes {
+  margin: 0;
 }
-
-.footer-contacto {
-    margin: 0;
-}
-
 .footer-contacto h3,
 .footer-redes h3 {
-    font-size: clamp(0.7rem, 5vw, 1rem);
-    color: #2D4350;
-    text-align: center;
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
+  font-size: clamp(0.7rem, 5vw, 1rem);
+  color: #2D4350;
+  text-align: center;
+  margin: 0;
+  font-family: "Oswald", sans-serif;
 }
 
-.footer-contacto .footer-contacto-lista {
-    padding: 0;
-    list-style: none;
-    margin: 0;
+.footer-contacto-lista,
+.footer-redes-lista {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.footer-contacto-lista li,
+.footer-redes-lista li {
+  padding: 5px;
+  text-align: center;
+  font-size: clamp(0.8rem, 5vw, 1rem);
+  color: #2D4350;
 }
 
-.footer-contacto .footer-contacto-lista li {
-    font-size: clamp(1rem, 5vw, 0.8rem);
-    text-align: center;
-    color: #2D4350;
-    padding: 5px;
+.footer-link {
+  font-size: clamp(0.8rem, 5vw, 1rem);
+  text-align: center;
+  color: #2D4350;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+.footer-link:hover {
+  color: #DC9E67;
 }
 
-.footer-redes .footer-redes-lista {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    list-style: none;
-    padding: 0;
-    margin: 0;
+@media (max-width: 1023px) {
+  .img-container,
+  .contacto-container {
+    margin-bottom: 1.5rem;
+  }
 }
 
-.footer-redes .footer-redes-lista li {
-    padding: 5px;
-    text-align: center;
+.imagen-principal {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin-top: 5rem;
+  margin-bottom: 5rem;
 }
 
-.footer-redes .footer-redes-lista li a {
-    font-size: clamp(00.8rem, 5vw, 1rem);
-    text-align: center;
-    color: #2D4350;
-    text-decoration: none;
-}
-
-/* --- Index ---*/
-/*Cree otra section que envuelve al main en general para poder dar background color evitando los limites de seguridad del container*/
-.main-bkgcolor {
-    padding-top: 2rem;
-    background-color: #EEE4C6;
-}
-
-/*Oculto el titulo principal pero se conserva el SEO*/
 .titulo-principal {
-    border: 0;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .subtitulos-main {
-    color: #2D4350;
-    text-align: center;
-    margin-top: 2.5rem;
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    /*text-decoration: underline 3px #2D4350;*/
-    text-underline-offset: 25px;
-    margin-bottom: 60px;
-}
-
-
-.imagen-principal {
-    display: block;
-    width: 100%
+  color: #2D4350;
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: clamp(1.3rem, 5vw, 2.5rem);
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
 }
 
 .galeria-main {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
-    list-style: none;
-    padding: 0;
-    margin: 2rem 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 2rem 0;
 }
-
 .galeria-main li {
-    font-size: clamp(0.5rem, 5vw, 1.5rem);
-    /* background-color: #DC9E67;*/
-    color: #2D4350;
-    text-align: center;
-    padding: 2rem;
-    border-radius: 8px;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-width: 0 0 4px 0;
-    border-style: solid;
-    border-color: #DC9E67;
-    transition: transform 0.5s ease, background-color 0.5s ease;
+  font-size: clamp(0.8rem, 5vw, 1.5rem);
+  color: #2D4350;
+  text-align: center;
+  padding: 2rem;
+  border-radius: 8px;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 4px solid #DC9E67;
+  transition: transform 0.5s ease, background-color 0.5s ease;
 }
-
-.galeria-main li:hover {
-    transform: translateY(-5px);
-    background-color: #DC9E67;
-}
-
 .galeria-main li::before {
-    content: '⚙️';
-    display: block;
-    /*Cambio a display block porque ::before es un elemento de linea por defecto. */
-    font-size: clamp(1.2rem, 5vw, 3rem);
-    margin-bottom: 1rem;
+  content: "⚙️";
+  display: block;
+  font-size: clamp(1.2rem, 5vw, 3rem);
+  margin-bottom: 1rem;
+}
+.galeria-main li:hover {
+  transform: translateY(-5px);
+  background-color: #DC9E67;
+}
+@media (max-width: 1023px) {
+  .galeria-main {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 600px) {
+  .galeria-main {
+    grid-template-columns: repeat(1, 1fr);
+  }
 }
 
-.contenedor-boton {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 2rem;
+.welcome-text-nosotros {
+  text-align: center;
 }
 
-.contenedor-boton .boton-general {
-    text-decoration: none;
-    /* border-bottom: 4px solid #2D4350;*/
-    /* border-right: 4px solid #2D4350;*/
-    border-radius: 50px;
-    padding: 1rem 2.5rem;
-    text-transform: uppercase;
-    font-size: clamp(0.5rem, 2.5vw, 1.2rem);
-    background-color: #2D4350;
-    color: #EEE4C6;
-}
-
-.contenedor-boton .boton-general:hover {
-    transform: translateY(-3px) scale(1.05);
-    box-shadow: 0 8px 25px #DC9E67;
-}
-
-/* --- Servicios ---*/
-
-.servicios-bkgcolor,
-.nosotros-bkgcolor,
-.galeria-bkgcolor {
-    background-color: #EEE4C6;
-    padding-top: 2rem;
-}
-
-.titulo-servicio,
-.titulo-nosotros,
-.titulo-galeria,
-.titulo-contacto {
-    color: #2D4350;
-    font-size: clamp(1.3rem, 5vw, 2.5rem);
-    text-align: center;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    /*text-decoration: underline #2D4350;*/
-    text-underline-offset: 1rem;
-}
-
-.servicio-item {
-    width: 100%;
-}
-
-.texto-servicio h2 {
-    color: #2D4350;
-    font-size: clamp(1rem, 3vw, 2rem);
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-    /*text-decoration: underline 2px solid #DC9E67;*/
-}
-
-.texto-servicio p {
-    color: #2D4350;
-    font-size: clamp(1rem, 3vw, 1.15rem);
-    text-align: center;
-}
-
-.servicio-item .row {
-    display: flex;
-    align-items: center;
-}
-
-.servicio-item {
-    margin-bottom: 2rem;
-}
-
-.servicio-item:nth-of-type(odd) .row {
-    flex-direction: row;
-}
-
-.servicio-item:nth-of-type(even) .row {
-    flex-direction: row-reverse;
-}
-
-.servicio-item:nth-of-type(odd) .img-servicio img {
-    display: block;
-    margin: 0 0 0 auto;
-}
-
-
-.servicio-item:nth-of-type(odd) .texto-servicio {
-    padding-right: 3rem;
-}
-
-.servicio-item:nth-of-type(even) .texto-servicio {
-    padding-left: 3rem;
-}
-
-/* --- Nosotros ---*/
-.titulo-nosotros {
-    margin-bottom: 3rem;
-}
-
-.nosotros-bienvenida {
-    text-align: center;
+.nosotros-primeraFila,
+.nosotros-segundaFila {
+  padding: 2rem 0;
 }
 
 .articulo-nosotros {
+  text-align: center;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+.articulo-nosotros h2 {
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.articulo-nosotros h2::after {
+  content: "";
+  display: block;
+  width: 50%;
+  height: 3px;
+  background-color: #DC9E67;
+  margin: 0.5rem auto 0;
+  border-radius: 2px;
+}
+.servicio-item {
+  margin-bottom: 4rem;
+}
+.servicio-item .row {
+  align-items: center;
+}
+.servicio-item:nth-of-type(even) .row {
+  flex-direction: row-reverse;
+}
+.servicio-item:nth-of-type(even) .texto-servicio {
+  padding-left: 3rem;
+  text-align: left;
+}
+.servicio-item:nth-of-type(even) .texto-servicio h2,
+.servicio-item:nth-of-type(even) .texto-servicio p {
+  text-align: left;
+}
+.servicio-item:nth-of-type(odd) .texto-servicio {
+  padding-right: 3rem;
+  text-align: right;
+}
+.servicio-item:nth-of-type(odd) .texto-servicio h2,
+.servicio-item:nth-of-type(odd) .texto-servicio p {
+  text-align: left;
+}
+.servicio-item:nth-of-type(odd) .img-servicio {
+  display: flex;
+  justify-content: flex-end;
+}
+.servicio-item .texto-servicio h2 {
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+.servicio-item .img-servicio img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+@media (max-width: 1023px) {
+  .servicio-item {
+    margin-bottom: 3rem;
+  }
+  .servicio-item .row {
+    flex-direction: column;
+  }
+  .servicio-item:nth-of-type(even) .row {
+    flex-direction: column;
+  }
+  .servicio-item:nth-of-type(even) .texto-servicio, .servicio-item:nth-of-type(odd) .texto-servicio {
+    padding: 0;
     text-align: center;
+    margin-bottom: 2rem;
+  }
+  .servicio-item:nth-of-type(even) .texto-servicio h2,
+  .servicio-item:nth-of-type(even) .texto-servicio p, .servicio-item:nth-of-type(odd) .texto-servicio h2,
+  .servicio-item:nth-of-type(odd) .texto-servicio p {
+    text-align: center;
+  }
+  .servicio-item .img-servicio img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
 }
 
-.articulo-nosotros h2,
+.lista-contactos {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.lista-contactos article {
+  margin-bottom: 2rem;
+}
 .lista-contactos article h2 {
-    color: #2D4350;
-    font-size: clamp(1.3rem, 3vw, 2rem);
-    text-align: center;
-    text-transform: uppercase;
-    font-family: 'Oswald', sans-serif;
-    /* text-decoration: underline 2px solid #DC9E67;*/
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
+  text-transform: uppercase;
+  margin-bottom: 1rem;
 }
-
-.articulo-nosotros p,
-.nosotros-bienvenida p {
-    color: #2D4350;
-    font-size: clamp(0.7rem, 3vw, 1.25rem);
-    text-align: left;
+.lista-contactos article h2::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background-color: #DC9E67;
+  margin: 0.5rem auto 0;
 }
-
-.nosotros-primeraFila {
-    padding: 4rem 0;
-}
-
-/* -- Galeria -- */
-.contenedor-galeria {
-    padding: 5rem;
-}
-
-.contenedor-galeria img {
-    display: block;
-    margin: 0 auto 0 auto;
-    height: 100%;
-}
-
-.titulo-galeria {
-    margin-bottom: rem;
-}
-
-/* -- Contacto -- */
-.titulo-contacto {
-    margin-bottom: 4rem;
-}
-
 .form-label {
-    color: #2D4350;
-    font-family: 'Oswald', sans-serif;
-    text-transform: uppercase;
-    font-size: clamp(0.7rem, 3vw, 1.25rem);
+  color: #2D4350;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  letter-spacing: 1px;
+}
+
+.form-control {
+  border: 2px solid #2D4350;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #2D4350;
+  border-radius: 8px;
+  padding: 0.8rem;
+}
+.form-control:focus {
+  box-shadow: none;
+  outline: none;
+  border-color: #DC9E67;
+  background-color: #fff;
 }
 
 .form-text {
-    color: #2D4350;
-    margin-bottom: 1.5rem;
+  color: #2D4350;
+  margin-bottom: 2rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
 }
 
-
-
-/*--- MEDIAS QUERYS ---*/
-
-/* -- DESKTOP -- */
-/*Max-width: igual o menor que el ancho especificado*/
-@media (max-width: 1023px) {
-    .galeria-main {
-        grid-template-columns: repeat(2, 1fr)
-    }
-
-    /*Footer*/
-    .img-container {
-        margin-bottom: 1.5rem;
-    }
-
-    .contacto-container {
-        margin-bottom: 1.5rem;
-    }
-
-    /* -- Servicios -- */
-    .titulo-servicio {
-        text-decoration: none;
-    }
-
-    .servicio-item .row {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .img-servicio img {
-        display: block;
-        margin: 0 auto 0 auto;
-    }
-
-    .servicio-item:nth-of-type(odd) .img-servicio img {
-        margin: 0 auto 0 auto;
-    }
-
-    .servicio-item:nth-of-type(odd) .texto-servicio {
-        padding: 0;
-    }
-
-    .servicio-item:nth-of-type(even) .texto-servicio {
-        padding: 0;
-    }
-
-    /* -- Servicios -- */
-    .nosotros-primeraFila,
-    .nosotros-segundaFila {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .nosotros-primeraFila {
-        padding: 2rem 0;
-    }
-
-    .nosotros-primeraFila div {
-        padding: 2rem 0;
-    }
-
-    .nosotros-primeraFila:nth-last-child {
-        padding-bottom: 0;
-    }
-
-    .nosotros-segundaFila div {
-        padding-bottom: 2rem;
-    }
-
+.contenedor-galeria {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.contenedor-galeria img {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  border: 4px solid #2D4350;
+  border-radius: 8px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.contenedor-galeria img:hover {
+  transform: scale(1.03);
+  border-color: #DC9E67;
+  box-shadow: 0 12px 24px rgba(45, 67, 80, 0.3);
+  cursor: pointer;
 }
 
-/* -- MOBILE -- */
-/*Max-width: igual o menor que el ancho especificado*/
-@media (max-width: 600px) {
-
-    /* -- Index -- */
-    .galeria-main {
-        grid-template-columns: repeat(1, 1fr)
-    }
-
-    .subtitulos-main {
-        text-decoration: none;
-    }
+.contenedor-boton {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
 }
+
+.boton-general {
+  display: inline-block;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 1rem 2.5rem;
+  text-transform: uppercase;
+  font-family: "Roboto", sans-serif;
+  font-size: clamp(0.5rem, 2.5vw, 1.2rem);
+  background-color: #2D4350;
+  color: #EEE4C6;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+.boton-general:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 25px #DC9E67;
+}
+
+.section-title {
+  text-align: center;
+  font-family: "Oswald", sans-serif;
+  color: #2D4350;
+  font-size: clamp(2rem, 5vw, 3rem);
+  text-transform: uppercase;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,18 @@
+@use 'sass:map';
+@use 'variables' as vars;
+
+
+// Se que no habia que usar funciones, pido disculpas. Pero me ganó la curiosidad. Todo implementado desde: https://sass-lang.com/documentation/values/functions/
+// con esto evito el map.get() en todos los llamados
+
+@function color ($id-color) {
+    @return map.get(vars.$palette, $id-color)
+}
+
+;
+
+@function typography ($id-font) {
+    @return map.get(vars.$fonts, $id-font)
+}
+
+;

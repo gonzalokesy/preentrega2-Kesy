@@ -1,0 +1,14 @@
+@use '../abstracts' as abs;
+
+// El contenedor para centrar un botón, es universal. 
+.contenedor-boton {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+// Boton utilizado en el main en dos sections distintas. Usamos el mixin creado con los parametros de colores necesarios. 
+.boton-general {
+    @include abs.button-style(abs.color(primary),
+        abs.color(secondary))
+}

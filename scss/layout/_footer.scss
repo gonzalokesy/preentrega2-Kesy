@@ -1,0 +1,68 @@
+@use '../abstracts' as abs;
+
+.footer-general {
+    background-color: abs.color(secondary);
+    border-top: 3px solid abs.color(primary);
+    border-bottom: 3px solid abs.color(primary);
+    padding: 1rem 0;
+}
+
+.img-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100%;
+
+    .logo-footer {
+        width: clamp(120px, 15vw, 50%);
+        height: auto;
+        padding: 5px;
+    }
+}
+
+.footer-contacto,
+.footer-redes {
+    margin: 0;
+
+    h3 {
+        font-size: clamp(0.7rem, 5vw, 1rem);
+        color: abs.color(primary);
+        text-align: center;
+        margin: 0;
+        font-family: abs.typography(font-title);
+    }
+}
+
+.footer-contacto-lista,
+.footer-redes-lista {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        padding: 5px;
+        text-align: center;
+        font-size: clamp(0.8rem, 5vw, 1rem);
+        color: abs.color(primary);
+    }
+}
+
+.footer-link {
+    font-size: clamp(0.8rem, 5vw, 1rem);
+    text-align: center;
+    color: abs.color(primary);
+    text-decoration: none;
+    transition: color 0.3s ease;
+
+    &:hover {
+        color: abs.color(accent);
+    }
+
+}
+
+.img-container,
+.contacto-container {
+    @include abs.media('tablet') {
+        margin-bottom: 1.5rem;
+    }
+}

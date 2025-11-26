@@ -1,0 +1,11 @@
+@use '../abstracts' as abs;
+
+.section-title {
+    text-align: center;
+    font-family: abs.typography(font-title);
+    color: abs.color(primary);
+    font-size: clamp(2rem, 5vw, 3rem);
+    text-transform: uppercase;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}

@@ -1,0 +1,66 @@
+@use '../abstracts' as abs;
+
+.imagen-principal {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-top: 5rem;
+    margin-bottom: 5rem;
+}
+
+.titulo-principal {
+    @include abs.title-hidden
+}
+
+.subtitulos-main {
+    color: abs.color(primary);
+    text-align: center;
+    margin-top: 2.5rem;
+    font-size: clamp(1.3rem, 5vw, 2.5rem);
+    font-family: abs.typography(font-title);
+    text-transform: uppercase;
+}
+
+.galeria-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+
+    li {
+        font-size: clamp(0.8rem, 5vw, 1.5rem);
+        color: abs.color(primary);
+        text-align: center;
+        padding: 2rem;
+        border-radius: 8px;
+        font-family: abs.typography(font-text);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        border-bottom: 4px solid abs.color(accent);
+        transition: transform 0.5s ease, background-color 0.5s ease;
+
+        &::before {
+            content: '⚙️';
+            display: block;
+            //Cambio a display block porque ::before es un elemento de linea por defecto. 
+            font-size: clamp(1.2rem, 5vw, 3rem);
+            margin-bottom: 1rem;
+        }
+
+        &:hover {
+            transform: translateY(-5px);
+            background-color: abs.color(accent);
+        }
+    }
+
+    @include abs.media('tablet') {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include abs.media('mobile') {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+}

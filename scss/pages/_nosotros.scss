@@ -1,0 +1,39 @@
+@use '../abstracts' as abs;
+
+.welcome-text-nosotros {
+    @extend %normal-text;
+    text-align: center;
+}
+
+.nosotros-primeraFila,
+.nosotros-segundaFila {
+    padding: 2rem 0;
+}
+
+.articulo-nosotros {
+    text-align: center;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+
+    h2 {
+        color: abs.color(primary);
+        font-family: abs.typography(font-title);
+        font-size: clamp(1.3rem, 3vw, 2rem);
+        text-transform: uppercase;
+        margin-bottom: 1rem;
+
+        &::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 3px;
+            background-color: abs.color(accent);
+            margin: 0.5rem auto 0;
+            border-radius: 2px;
+        }
+    }
+
+    p {
+        @extend %normal-text;
+    }
+}
