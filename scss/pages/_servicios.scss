@@ -59,10 +59,13 @@
         }
     }
 
-    .img-servicio img {
-        width: 100%;
-        height: auto;
-        border-radius: 8px;
+    .img-servicio {
+        .img-responsive {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
     }
 
     // Aplco mediaquey para deshacer el efecto zigzag y encolumanr todo 

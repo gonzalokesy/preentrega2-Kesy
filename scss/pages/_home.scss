@@ -41,17 +41,21 @@
         border-bottom: 4px solid abs.color(accent);
         transition: transform 0.5s ease, background-color 0.5s ease;
 
-        &::before {
-            content: '⚙️';
+        .icon-svg {
             display: block;
-            //Cambio a display block porque ::before es un elemento de linea por defecto. 
-            font-size: clamp(1.2rem, 5vw, 3rem);
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem auto;
+            width: clamp(3rem, 6vw, 4rem);
+            height: auto;
+            transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
         &:hover {
             transform: translateY(-5px);
             background-color: abs.color(accent);
+
+            .icon-svg {
+                transform: scale(1.1);
+            }
         }
     }
 
