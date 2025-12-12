@@ -1,25 +1,212 @@
 @use '../abstracts' as abs;
 
-.contenedor-galeria {
-    margin-bottom: 2rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.galeria-bkgcolor {
+    padding-bottom: 5rem;
+}
 
-    img {
-        width: 100%;
-        height: auto;
-        max-width: 450px;
-        border: 4px solid abs.color(primary);
-        border-radius: 8px;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+.bento-archive {
+    display: grid;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 280px;
+
+    grid-template-areas:
+        "job1 job1 job2"
+        "job3 job4 job4"
+        "job5 job5 job6";
+
+    // --- Asignación de areas ---
+    .area-1 {
+        grid-area: job1;
+    }
+
+    .area-2 {
+        grid-area: job2;
+    }
+
+    .area-3 {
+        grid-area: job3;
+    }
+
+    .area-4 {
+        grid-area: job4;
+    }
+
+    .area-5 {
+        grid-area: job5;
+    }
+
+    .area-6 {
+        grid-area: job6;
+    }
+
+
+    .bento-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 6px;
+        border: 4px solid abs.color(secondary);
+        outline: 2px solid abs.color(primary);
+        background-color: abs.color(primary);
+        box-shadow: 8px 8px 0 rgba(45, 67, 80, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            filter: grayscale(80%);
+        }
+
+        // Información oculta que aparecera al hacer hover
+        .card-info {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: 1rem;
+            background: rgba(45, 67, 80, 0.9);
+            color: abs.color(secondary);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+
+            h3 {
+                font-family: abs.typography(font-title);
+                text-transform: uppercase;
+                margin: 0;
+                font-size: 1.2rem;
+                color: abs.color(accent);
+            }
+
+            p {
+                font-family: abs.typography(font-text);
+                font-size: 0.9rem;
+                margin: 0;
+            }
+        }
 
         &:hover {
-            transform: scale(1.03);
-            border-color: abs.color(accent);
-            box-shadow: 0 12px 24px rgba(abs.color(primary), 0.3);
-            cursor: pointer;
+            transform: translate(-4px, -4px);
+            box-shadow: 12px 12px 0 rgba(220, 158, 103, 0.4);
+            outline-color: abs.color(accent);
+
+            img {
+                filter: grayscale(0%);
+                transform: scale(1.05);
+            }
+
+            .card-info {
+                transform: translateY(0);
+            }
+        }
+    }
+
+    // --- Tarjeta tipo flip-card ---
+    .flip-card {
+        perspective: 1000px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        box-shadow: none;
+
+        &:hover {
+            transform: none;
+            box-shadow: none;
+
+            .flip-inner {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+    .flip-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        transition: transform 0.8s;
+        transform-style: preserve-3d;
+        box-shadow: 8px 8px 0 rgba(45, 67, 80, 0.2);
+    }
+
+    .flip-front,
+    .flip-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        border: 4px solid abs.color(secondary);
+        outline: 2px solid abs.color(primary);
+    }
+
+    .flip-front,
+    .flip-back {
+        img {
+            filter: grayscale(0%);
+        }
+    }
+
+    .flip-back {
+        transform: rotateY(180deg);
+
+        img {
+            filter: grayscale(0%);
+        }
+    }
+
+    .badge-state {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background-color: abs.color(primary);
+        color: abs.color(secondary);
+        padding: 4px 10px;
+        font-family: abs.typography(font-title);
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        z-index: 10;
+        border-radius: 4px;
+
+        &.alert {
+            background-color: abs.color(alert);
+            color: white;
+        }
+    }
+
+    // --- Media queris ---
+    @include abs.media('tablet') {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "job1 job1"
+            "job2 job3"
+            "job4 job4"
+            "job5 job6";
+
+        .bento-card {
+            img {
+                filter: grayscale(0%);
+            }
+        }
+    }
+
+    @include abs.media('mobile') {
+        grid-template-columns: 1fr;
+        grid-auto-rows: 300px;
+        grid-template-areas:
+            "job1"
+            "job2"
+            "job3"
+            "job4"
+            "job5"
+            "job6";
+
+        .bento-card {
+            img {
+                filter: grayscale(0%);
+            }
         }
     }
 }

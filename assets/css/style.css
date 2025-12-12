@@ -341,26 +341,166 @@ main {
   font-size: 0.9rem;
 }
 
-.contenedor-galeria {
-  margin-bottom: 2rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.galeria-bkgcolor {
+  padding-bottom: 5rem;
 }
-.contenedor-galeria img {
-  width: 100%;
-  height: auto;
-  max-width: 450px;
-  border: 4px solid #2D4350;
-  border-radius: 8px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+
+.bento-archive {
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 1.5rem;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 280px;
+  grid-template-areas: "job1 job1 job2" "job3 job4 job4" "job5 job5 job6";
 }
-.contenedor-galeria img:hover {
-  transform: scale(1.03);
-  border-color: #DC9E67;
-  box-shadow: 0 12px 24px rgba(45, 67, 80, 0.3);
+.bento-archive .area-1 {
+  grid-area: job1;
+}
+.bento-archive .area-2 {
+  grid-area: job2;
+}
+.bento-archive .area-3 {
+  grid-area: job3;
+}
+.bento-archive .area-4 {
+  grid-area: job4;
+}
+.bento-archive .area-5 {
+  grid-area: job5;
+}
+.bento-archive .area-6 {
+  grid-area: job6;
+}
+.bento-archive .bento-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  border: 4px solid #EEE4C6;
+  outline: 2px solid #2D4350;
+  background-color: #2D4350;
+  box-shadow: 8px 8px 0 rgba(45, 67, 80, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+}
+.bento-archive .bento-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  filter: grayscale(80%);
+}
+.bento-archive .bento-card .card-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 1rem;
+  background: rgba(45, 67, 80, 0.9);
+  color: #EEE4C6;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+.bento-archive .bento-card .card-info h3 {
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 1.2rem;
+  color: #DC9E67;
+}
+.bento-archive .bento-card .card-info p {
+  font-family: "Roboto", sans-serif;
+  font-size: 0.9rem;
+  margin: 0;
+}
+.bento-archive .bento-card:hover {
+  transform: translate(-4px, -4px);
+  box-shadow: 12px 12px 0 rgba(220, 158, 103, 0.4);
+  outline-color: #DC9E67;
+}
+.bento-archive .bento-card:hover img {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+.bento-archive .bento-card:hover .card-info {
+  transform: translateY(0);
+}
+.bento-archive .flip-card {
+  perspective: 1000px;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+.bento-archive .flip-card:hover {
+  transform: none;
+  box-shadow: none;
+}
+.bento-archive .flip-card:hover .flip-inner {
+  transform: rotateY(180deg);
+}
+.bento-archive .flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  box-shadow: 8px 8px 0 rgba(45, 67, 80, 0.2);
+}
+.bento-archive .flip-front,
+.bento-archive .flip-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 4px solid #EEE4C6;
+  outline: 2px solid #2D4350;
+}
+.bento-archive .flip-front img,
+.bento-archive .flip-back img {
+  filter: grayscale(0%);
+}
+.bento-archive .flip-back {
+  transform: rotateY(180deg);
+}
+.bento-archive .flip-back img {
+  filter: grayscale(0%);
+}
+.bento-archive .badge-state {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #2D4350;
+  color: #EEE4C6;
+  padding: 4px 10px;
+  font-family: "Oswald", sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  z-index: 10;
+  border-radius: 4px;
+}
+.bento-archive .badge-state.alert {
+  background-color: #B95F50;
+  color: white;
+}
+@media (max-width: 1023px) {
+  .bento-archive {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "job1 job1" "job2 job3" "job4 job4" "job5 job6";
+  }
+  .bento-archive .bento-card img {
+    filter: grayscale(0%);
+  }
+}
+@media (max-width: 600px) {
+  .bento-archive {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 300px;
+    grid-template-areas: "job1" "job2" "job3" "job4" "job5" "job6";
+  }
+  .bento-archive .bento-card img {
+    filter: grayscale(0%);
+  }
 }
 
 .contenedor-boton {
